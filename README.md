@@ -24,7 +24,7 @@ Employee Edit Page
 
 - Home Page
 
-  ![Home Page](wwwroot\screenshots\Home-page.jpg)
+  ![Home Page](ASP.NET-MVC-CORE-5-CRUDSample/screenshots/Home-page.jpg)
 
 - Employee List Page
 
