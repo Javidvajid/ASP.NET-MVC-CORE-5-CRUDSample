@@ -1,0 +1,103 @@
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container-fluid d-flex justify-content-between mb-5">
+    <div class="">
+        <h3 class="">Edit Employee Details</h3>
+    </div>
+</div>
+
+<div class="w-75">
+    <form action="~/Home/EditEmployee" method="post">
+        @if (ViewBag.EmployeeModel != null)
+        {
+            @foreach (var item in ViewBag.EmployeeModel)
+            {
+                <div class="form-group row">
+                    <label for="EmpId" class="col-sm-2 col-form-label">Employee Id</label>
+                    <div class="col-sm-5">
+                        <input type="text" pattern="\d*" id="EmpId" name="EmpId" width="180px" class="form-control form-control-md" value="@item.EmpId"
+                    required readonly />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="EmpNm" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="EmpNm" name="EmpNm" width="180px" class="form-control form-control-md" value="@item.EmpNm"
+                    maxlength="35" required />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Dept" class="col-sm-2 col-form-label">Department</label>
+                    <div class="col-sm-5">
+                        <select class="form-select" id="Dept" name="Dept" aria-label="Default select example">
+                            @if(ViewBag.Message != "") {
+                                <option disabled>Select Department</option>
+                                @if(ViewBag.Message == "1") {
+                                    <option selected value="1" name="Dept">System Development</option>
+                                    <option value="2" name="Dept">Research and Development</option>
+                                    <option value="3" name="Dept">Recruitment and HR</option>
+                                    <option value="4" name="Dept">Network Management</option>
+                                } else if(ViewBag.Message == "2") {
+                                    <option value="1" name="Dept">System Development</option>
+                                    <option selected value="2" name="Dept">Research and Development</option>
+                                    <option value="3" name="Dept">Recruitment and HR</option>
+                                    <option value="4" name="Dept">Network Management</option>
+                                } else if(ViewBag.Message == "3") {
+                                    <option value="1" name="Dept">System Development</option>
+                                    <option value="2" name="Dept">Research and Development</option>
+                                    <option selected value="3" name="Dept">Recruitment and HR</option>
+                                    <option value="4" name="Dept">Network Management</option>              
+                                }else {
+                                    <option value="1" name="Dept">System Development</option>
+                                    <option value="2" name="Dept">Research and Development</option>
+                                    <option value="3" name="Dept">Recruitment and HR</option>
+                                    <option selected value="4" name="Dept">Network Management</option>
+                                }
+                            }else {
+                                <option selected disabled>Select Department</option>
+                                <option value="1" name="Dept">System Development</option>
+                                <option value="3" name="Dept">Research and Development</option>
+                                <option value="2" name="Dept">Recruitment and HR</option>
+                                <option value="4" name="Dept">Network Management</option>
+                            }
+                            </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Desig" class="col-sm-2 col-form-label">Designation</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="Desig" name="Desig" width="180px" class="form-control form-control-md" value="@item.Desig"
+                    maxlength="35" required />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Salary" class="col-sm-2 col-form-label">Salary</label>
+                    <div class="col-sm-5">
+                        <input type="text" pattern="\d*" id="Salary" name="Salary" width="180px" class="form-control form-control-md" value="@item.Salary"
+                        maxlength="7" required />
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label for="JDate" class="col-sm-2 col-form-label">Joining Date</label>
+                    <div class="col-sm-5">
+                        <input type="date" id="JDate" name="JDate" width="180px" class="form-control form-control-md" value="@item.JDate"
+                    required />
+                    </div>
+                </div>
+            }
+        }
+        <div class="justify-content-start">
+            <a class="" href="@Url.Action("Employee","Home")"><button type="button"
+                class="btn btn-dark mr-2">
+                Back
+            </button></a>
+            <input type="submit" class="btn btn-primary btnSave" value="Update changes">
+        </div>
+    </form>
+</div>

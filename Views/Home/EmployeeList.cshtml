@@ -1,0 +1,136 @@
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };  
+    </script>
+}
+
+<div class="container-fluid header d-flex justify-content-between mb-3">
+    <div class="title">
+        <h3 class="">Employee List</h3>
+    </div>
+    <div class="justify-content-end d-flex searchDiv">
+        <form class="form-inline d-flex mr-2 searchForm" action="~/Home/Search" method="get">
+            <!-- Search form -->
+            <input class="form-control mr-sm-2" id="EmpId" name="EmpId" type="search" placeholder="Enter Employee Id"
+                aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 btnSearch" type="submit">Search</button>
+        </form>
+        <div class="d-flex justify-content-between">
+            <div class="title2">
+                <h3 class="">Employee List</h3>
+            </div>
+            <button type="button" class="justify-content-end btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#createNewModal">
+                Create New
+            </button>
+        </div>
+    </div>
+</div>
+
+<div
+    class="container-fluid table-responsive text-nowrap align-items-center w-auto table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-striped" id="sort">
+        <thead class="text-center table-bordered table-dark">
+            <tr>
+                <th scope="col">Employee Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Department</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Joining Date</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        @if (ViewBag.EmployeeModel.Count != 0)
+        {
+            @foreach (var item in ViewBag.EmployeeModel)
+            {
+                <tbody class="th-lg text-left thead-dark">
+                    <tr>
+                        <td>@item.EmpId</td>
+                        <td>@item.EmpNm</td>
+                        <td>@item.Dept</td>
+                        <td>@item.Desig</td>
+                        <td>@item.Salary</td>
+                        <td>@item.JDate</td>
+                        <td>
+                            <a class="justify-content-end" href="@Url.Action("Edit","Home", new { @item.EmpId })"><button
+                            type="button" class="btn btn-success justify-content-end">
+                                    Edit
+                                </button></a>
+                            <a class="btn btn-danger justify-content-end"
+                        href="@Url.Action("Delete","Home", new { @item.EmpId })">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        }
+        else
+        {
+            <tbody class="th-lg text-left table-borderless">
+                <tr>
+                    <td colspan="7">No Records Found!</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+
+<div class="modals">
+    <!-- Create New Employee Modal -->
+    <div class="modal fade" id="createNewModal" tabindex="-1" aria-labelledby="createNewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createNewModalLabel">Create New Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="~/Home/CreateEmployee" method="post">
+                        <div class="form-outline mb-1">
+                            <input type="text" pattern="\d*" id="EmpId" name="EmpId"
+                                class="form-control form-control-md" placeholder="Employee Id" maxlength="8"
+                                minlength="3" required />
+                        </div>
+                        <div class="form-outline mb-1">
+                            <input type="text" id="EmpNm" name="EmpNm" class="form-control form-control-md"
+                                placeholder="Name" maxlength="35" required />
+                        </div>
+                        <div class="form-outline mb-1">
+                            <select class="form-select" id="Dept" name="Dept" aria-label="Default select example">
+                                <option selected disabled>Select Department</option>
+                                <option value="1" name="Dept">System Development</option>
+                                <option value="3" name="Dept">Research and Development</option>
+                                <option value="2" name="Dept">Recruitment and HR</option>
+                                <option value="4" name="Dept">Network Management</option>
+                            </select>
+                        </div>
+                        <div class="form-outline mb-1">
+                            <input type="text" id="Desig" name="Desig" class="form-control form-control-md"
+                                maxlength="35" placeholder="Designation" required />
+                        </div>
+                        <div class="form-outline mb-1">
+                            <input type="text" pattern="\d*" id="Salary" name="Salary" maxlength="7"
+                                class="form-control form-control-md" placeholder="Salary" required />
+                        </div>
+                        <div class="form-outline mb-1">
+                            <input type="date" id="JDate" name="JDate" class="form-control form-control-md"
+                                placeholder="Joining Date" required />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary btnSave" value="Create">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

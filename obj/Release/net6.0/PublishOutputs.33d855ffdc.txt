@@ -1,0 +1,7 @@
+D:\CSharp_Workspace\CRUDSample\bin\Publish\CRUDSample.exe
+D:\CSharp_Workspace\CRUDSample\bin\Publish\appsettings.Development.json
+D:\CSharp_Workspace\CRUDSample\bin\Publish\appsettings.json
+D:\CSharp_Workspace\CRUDSample\bin\Publish\CRUDSample.dll
+D:\CSharp_Workspace\CRUDSample\bin\Publish\CRUDSample.deps.json
+D:\CSharp_Workspace\CRUDSample\bin\Publish\CRUDSample.runtimeconfig.json
+D:\CSharp_Workspace\CRUDSample\bin\Publish\CRUDSample.pdb

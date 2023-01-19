@@ -1,0 +1,40 @@
+.bgImg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    left: 0;
+    filter: brightness(40%);
+}
+
+.mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: lightcoral;
+    letter-spacing: 5px;
+}
+
+.lead {
+    font-family: cursive;
+}
+
+.btn {
+    background-color: #55c2da;
+}
+
+@media only screen and (max-width: 600px) {
+    .mask {
+        width: 100%;
+        padding-right: var(--bs-gutter-x, .75rem);
+        padding-left: var(--bs-gutter-x, .75rem);
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

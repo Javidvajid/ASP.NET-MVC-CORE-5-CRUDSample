@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Home Page</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CRUDSample.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <div class="bg-image d-flex">
+        <img src="~/images/bg.jpg" class="bgImg" />
+        <div class="mask text-light text-center">
+            <h1>Welcome</h1>
+            <p class="m-0 lead">Here is a very basic ASP.NET MVC 5 Responsive web application that performs CRUD
+                (create, read, update, and delete)
+                operations. There will be
+                no
+                database in this project; all operations will be performed on temporary data. This project is created to
+                become
+                acquainted with the ASP.NET MVC architecture.</p>
+            <p class="m-0 lead">Let's dive into the project: </p>
+            <a class="btn btn-secondary btn-lg mt-3" asp-area="" asp-controller="Home" asp-action="Employee">Click
+                Here</a>
+        </div>
+    </div>
+</body>
+
+</html>
