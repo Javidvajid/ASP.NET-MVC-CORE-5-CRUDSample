@@ -32,7 +32,7 @@ Employee Edit Page
 
 - Create Employee Modal
 
-  ![Create Employee Modal](wwwroot\screenshots\CreateEmployee.jpg)
+  ![Create Employee Modal](screenshots\CreateEmployee.jpg)
 
 - Edit Employee Page
 
