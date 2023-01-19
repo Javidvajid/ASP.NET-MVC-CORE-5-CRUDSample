@@ -55,11 +55,6 @@ Employee Edit Page
 
 Just download the zipped file and open it on visual studio code after unzipping and run it.
 
-# Visit Project
-
-- [Live Demo](https://javidvajid.github.io/ASP.NET-MVC-CORE-5-CRUDSample/)
-
-
 # Show your support
 
 - If you like the project then don't forget to give a ⭐.
