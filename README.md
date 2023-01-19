@@ -24,19 +24,19 @@ Employee Edit Page
 
 - Home Page
 
-  ![Home Page](ASP.NET-MVC-CORE-5-CRUDSample/wwwroot/screenshots/Home-page.jpg)
+  ![Home Page](wwwroot/screenshots/Home-page.jpg)
 
 - Employee List Page
 
-  ![Employee List Page](wwwroot\screenshots\EmployeeList.jpg)
+  ![Employee List Page](wwwroot/screenshots/EmployeeList.jpg)
 
 - Create Employee Modal
 
-  ![Create Employee Modal](screenshots\CreateEmployee.jpg)
+  ![Create Employee Modal](wwwroot/screenshots/CreateEmployee.jpg)
 
 - Edit Employee Page
 
-  ![Edit Employee Page](wwwroot\screenshots\EditEmployee.jpg)
+  ![Edit Employee Page](wwwroot/screenshots/EditEmployee.jpg)
 
 # Built With
 
